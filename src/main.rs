@@ -12,6 +12,8 @@ fn main() {
     launch(App);
 }
 
+const FAVICON: Asset = asset!("/assets/cat.ico");
+
 #[component]
 fn App() -> Element {
     let mut list = use_signal(|| vec![]);
@@ -26,10 +28,9 @@ fn App() -> Element {
     use_context_provider(|| list);
 
     rsx!(
+        document::Link { rel: "icon", href: FAVICON }
         document::Stylesheet{href: asset!("/assets/main.css")}
-        document::Stylesheet{href: asset!("/assets/tailwind.css")}
-        "test"
-        Router::<Route> {}
+        document::Stylesheet{href: asset!("/assets/tailwind.css")}        Router::<Route> {}
     )
 }
 
