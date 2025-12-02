@@ -15,6 +15,29 @@ pub fn Add() -> Element {
         div { class: "sm:w-1/2 w-5/6",
             li {
                 class: "mb-2 flex justify-between item-center text-purple-200 px-2 py-2 rounded",
+                div{
+                    class: "w-1/5",
+                    h1 { "Name" },
+                },
+                div{
+                    class: "w-1/5",
+                    h1 { "Mass" },
+                },
+                div{
+                    class: "w-1/5",
+                    h1 { "Unit" },
+                },
+                div{
+                    class: "w-1/5",
+                    h1 { "Date" },
+                },
+                div{
+                    class: "w-1/4",
+                    h1 { "" },
+                },
+            }
+            li {
+                class: "mb-2 flex justify-between item-center text-purple-200 px-2 py-2 rounded",
                 input {
                   class: "w-1/5 p-1 rounded border-2 border-slate-100 border-solid",
                   r#type: "text",
