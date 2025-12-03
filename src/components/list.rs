@@ -27,7 +27,7 @@ pub fn List() -> Element {
                                     key : "{id}",
                                     class: if sitem.mass <= 0 { "bg-red-200" },
                                     div { class: "flex" ,
-                                        Link {to: Route::Itemm { list_signal: list, id }, "{sitem.name.clone()}"," | ", "{sitem.mass.clone()}", "{sitem.unit.clone()}"," | ", "{sitem.experation.clone()}" }
+                                        Link {to: Route::Itemm { id }, "{sitem.name.clone()}"," | ", "{sitem.mass.clone()}", "{sitem.unit.clone()}"," | ", "{sitem.experation.clone()}" }
                                     }
                                     div {
                                         Remove { list_signal: list, id }

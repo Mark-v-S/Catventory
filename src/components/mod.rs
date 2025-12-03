@@ -1,7 +1,9 @@
 pub mod add;
 pub mod change;
+pub mod get_index;
 pub mod home;
 pub mod item;
 pub mod list;
 pub mod nav;
 pub mod remove;
+pub mod show;

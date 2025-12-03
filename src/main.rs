@@ -40,10 +40,7 @@ pub enum Route {
     #[route("/")]
     Home {},
     #[route("/item/:id")]
-    Itemm {
-        list_signal: Signal<Vec<Item>>,
-        id: i64,
-    },
+    Itemm { id: i64 },
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
