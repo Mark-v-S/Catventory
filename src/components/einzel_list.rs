@@ -4,7 +4,7 @@ use crate::components::remove::Remove;
 use crate::{Item, Route};
 
 #[component]
-pub fn List() -> Element {
+pub fn EList() -> Element {
     let list = use_context::<Signal<Vec<Item>>>();
     if list.read().len() == 0 {
         rsx!(
@@ -12,6 +12,7 @@ pub fn List() -> Element {
         )
     } else {
         rsx!(
+            //Add {},
             div { class: "h-screen w-full flex justify-center",
                 ul { class: "sm:w-1/2 w-5/6",
                     {
@@ -27,7 +28,7 @@ pub fn List() -> Element {
                                     key : "{id}",
                                     class: if sitem.mass <= 0 { "bg-red-200" },
                                     div { class: "flex" ,
-                                        Link {to: Route::EList {  }, "{sitem.name.clone()}"," | ", "{sitem.mass.clone()}", "{sitem.unit.clone()}"," | ", "{sitem.experation.clone()}" }
+                                        Link {to: Route::Itemm { id }, "{sitem.name.clone()}"," | ", "{sitem.mass.clone()}", "{sitem.unit.clone()}"," | ", "{sitem.experation.clone()}" }
                                     }
                                     div {
                                         Remove { list_signal: list, id }

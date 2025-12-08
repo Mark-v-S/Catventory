@@ -25,7 +25,7 @@ pub fn Show(
             }
             li {
                 class: "mb-1 flex item-center rounded",
-                h1 { "Name :" },
+                h1 { "Produkt :" },
                 h1 { "{list.read()[0].name}" }
             }
             li {

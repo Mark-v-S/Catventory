@@ -129,3 +129,39 @@ pub async fn update_item_quantity(id: i64, masss: String) -> Result<(), ServerFn
         Ok(())
     }
 }
+
+/*
+#[server]
+pub async fn get_itemtype_list() -> Result<Vec<Item>, ServerFnError> {
+    let db = get_db().await;
+
+    let rows: Vec<ItemSql> = sqlx::query_as("SELECT * FROM itemtypes")
+        .fetch_all(db)
+        .await
+        .unwrap();
+
+    let mut v = vec![];
+
+    for row in rows {
+        let item = Item {
+            id: row.id,
+            name: row.name,
+        };
+        v.push(item)
+    }
+    Ok(v)
+}
+
+#[server]
+pub async fn add_new_itemtype(name: String) -> Result<i64, ServerFnError> {
+    let db = get_db().await;
+
+    let result = sqlx::query("INSERT INTO itemtypes (name) VALUES (?1, ?2, ?3, ?4)")
+        .bind(&name)
+        .execute(db)
+        .await
+        .unwrap();
+
+    Ok(result.last_insert_rowid())
+}
+*/

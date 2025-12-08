@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 mod backend;
 mod components;
 
-use components::{home::Home, item::Itemm, nav::Nav};
+use components::{einzel_list::EList, home::Home, item::Itemm, nav::Nav};
 
 use crate::backend::server_funktions::get_item_list;
 
@@ -39,7 +39,9 @@ pub enum Route {
     #[layout(Nav)]
     #[route("/")]
     Home {},
-    #[route("/item/:id")]
+    #[route("/einzel_list/")]
+    EList {},
+    #[route("/einzel_list/item/:id")]
     Itemm { id: i64 },
 }
 
